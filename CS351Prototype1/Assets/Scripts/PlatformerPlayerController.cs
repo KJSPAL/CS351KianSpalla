@@ -63,6 +63,19 @@ public class PlatformerPlayerController : MonoBehaviour
         //Check if the player is grounded
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 
+        //TODO: Optionally we can add animations here later
+
+        //Ensure the placer is facing the direction of the movement
+
+        if(horizontalInput > 0)
+        {
+            transform.localScale = new Vector3(1f, 1f, 1f);
+        }
+        else if(horizontalInput < 0)
+        {
+            transform.localScale = new Vector3(-1f, 1f, 1f);
+        }
+
     }
 
 }
